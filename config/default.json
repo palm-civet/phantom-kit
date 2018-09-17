@@ -1,0 +1,15 @@
+{
+  "app": {
+    "port": 4000
+  },
+  "yslow": {
+    "options": {
+      "info": "basic", 
+      "format": "tap"
+    }
+  },
+  "devServe": {
+    "host": "http://localhost:8080/",
+    "view": "views"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "phantom-kit",
+  "version": "1.0.0",
+  "description": "website perform test based on phantomjs",
+  "main": "index.js",
+  "scripts": {
+    "static": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config bin/webpack.config.js --port 8080",
+    "start": "NODE_ENV=development node app.js",
+    "dev": "npm run start & npm run static",
+    "dist": "node_modules/.bin/webpack --config bin/webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "config": "^2.0.1",
+    "element-ui": "^2.4.7",
+    "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-proxy": "^0.9.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "phantom": "^6.0.3",
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.5",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.1.1",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^3.6.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}
