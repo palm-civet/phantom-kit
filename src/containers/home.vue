@@ -1,7 +1,13 @@
 <template>
   <container name="home">
     <el-row :gutter="12">
-      <el-col :span="6"><el-input v-model="url" placeholder="请输入网址"></el-input></el-col>
+      <el-col :span="6">
+        <el-input 
+          v-model="url" 
+          autocomplete="true" 
+          placeholder="请输入网址"
+          @keyup.enter.native="submit"></el-input>
+      </el-col>
       <el-col :span="2"><el-button @click="submit" type="primary">
         <span v-if="!loading">提交</span>
         <i v-else class="el-icon-loading"></i>
@@ -27,7 +33,7 @@
   export default {
     data() {
       return {
-        url: '',
+        url: 'https://biztest.chunyu.me/',
         loading: false,
         result: []
       }
@@ -36,6 +42,7 @@
     methods: {
       submit() {
         this.loading = true;
+        // 提交验证
         axios.post('/api/run-url', {url: this.url})
           .then(({data}) => data)
           .then(({code, data, msg}) => {
